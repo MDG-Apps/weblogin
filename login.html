@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MDG Nienburg iPhone App</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<!--meta http-equiv="refresh" content="5;url=https://itunes.apple.com/de/app/mdg-nienburg/id921382324?mt=8"-->
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script>
+		function login() {
+			var url = 'https://mdgapps.yanniks.de/mdg-web/login.php';
+			var pw = $('#password').val();
+			var user = $('#username').val();
+			$.post( "https://mdgapps.yanniks.de/mdg-web/login.php", { type: "login", username: user, password: pw })
+			.done(function( data ) {
+				console.log(data);
+				$('#username').css("background-color","red");
+				$('#password').css("background-color","red");
+				$("#login").effect("shake");
+				return;
+		    })
+			.fail(function () {
+  				var form = $('<form action="' + url + '" method="post">' +
+  			  '<input type="text" name="type" value="login" /><input type "text" name="username" value="' + user + '" /><input type "text" name="password" value="' + pw + '" />' +
+  			  '</form>');
+  				$('body').append(form);
+  				form.submit();
+			});
+		}
+		</script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="javascript:void(0)">MDG Nienburg</a> für iPhone</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html#noanim">Startseite</a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Verwaltung</a>
+							<ul>
+								<li><a href="login.html">Login</a></li>
+								<li><a href="register.html">Registrieren</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Login</h2>
+
+				<ul class="actions">
+					<form action="javascript:login()">
+						<div align="center" id="login">
+							<input type="text" placeholder="Benutzername" id="username" style="max-width:300px;opacity:0.5;background-color:black"><br>
+							<input type="password" placeholder="Passwort" id="password" style="max-width:300px;opacity:0.5;background-color:black"><br><br>
+							<input type="submit" value="Einloggen">
+						</div>
+					</form>
+				</ul>
+			</section>
+			
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<!--li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li-->
+					<li><a href="https://github.com/MDG-Apps" class="icon fa-github"><span class="label">Github</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Yannik Ehlert. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+	</body>
+</html>

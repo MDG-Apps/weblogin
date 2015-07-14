@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MDG Nienburg iPhone App</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/jquery.scrollgress.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script>
+		function scrollto() {
+			$('html, body').animate({ scrollTop: ($("#main").offset().top)}, 'slow');
+			window.location.hash = "#main";
+		}
+ 		function selectcolor(color) {
+			if (color == "black") {
+				$('#iphoneswhite').fadeOut("fast",function() {
+					$('#iphonesblack').fadeIn("fast");
+				});
+			} else {
+				$('#iphonesblack').fadeOut("fast",function() {
+					$('#iphoneswhite').fadeIn("fast");
+				});
+			}
+		}
+		$(window).load(function() {
+			if (window.location.hash != "#noanim") {
+				$('#stdcontent').show();
+				var offset = $($('#banner').children()[0]).offset();
+				$('#appimagewelcome').offset(offset);
+				$('#appimagewelcome').show();
+				$('#stdcontent').hide();
+				setTimeout(function() {
+					$('#stdcontent').fadeIn(1000,function() {
+						$('html').css("background-color","");
+						$('#appimagewelcome').hide();
+					});
+				}, 2000);
+			}
+		});
+		$(function() {
+			if (window.location.hash != "#noanim") {
+				$('html').css("background-color","black");
+				$('#stdcontent').hide();
+				$('#stdcontent').css("background-color","#f5f5f5");
+			}
+		});
+		</script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+		<img id="appimagewelcome" style="max-width:102px;display:none;position:absolute" src="images/AppIcon.png">
+		<div id="stdcontent">
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><a href="javascript:void(0)">MDG Nienburg</a> Onlinesystem</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"><li><a href="index.html#noanim">Startseite</a></li></a></li>
+						<li>
+							<a href="" class="icon fa-angle-down">Verwaltung</a>
+							<ul>
+								<li><a href="login.html">Login</a></li>
+								<li><a href="register.html">Registrieren</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner">
+				<img src="images/AppIcon.png" style="max-width:102px">
+				<h2>MDG Nienburg Onlinesystem</h2>
+				<p>Aufgabenverwaltung auch ohne App.</p>
+				<ul class="actions">
+					<li><a href="login.html" class="button special">Login</a></li>
+					<li><a href="javascript:scrollto()" class="button">Funktionsumfang</a></li>
+				</ul>
+			</section>
+
+		<!-- Main -->
+			<section id="main" class="container">
+		
+				<section class="box special">
+					<header class="major">
+						<h2>Alles ganz einfach.<br>Auch ohne iOS-Gerät.</h2>
+						<p>Ohne tägliches, lästiges Navigieren durch Websites und Eingeben von<br />
+						Zugangsdaten schnell zu den Informationen, auf die es ankommt.</p>
+					</header>
+					<span class="image featured"><img src="images/maciphone.png" alt="" /></span>
+				</section>
+						
+				<section class="box special features">
+					<div class="features-row">
+						<section>
+							<span class="icon major fa-wifi accent5"></span>
+							<h3>Hausaufgaben immer synchron</h3>
+							<p>Du weißt nicht welche Hausaufgaben aktuell sind? Dann guck einfach, was andere Mitglieder der Klasse / des Kurses eingetragen haben.</p>
+						</section>
+						<section>
+							<span class="icon major fa-bell accent1"></span>
+							<h3>Rechtzeitig erinnert werden</h3>
+							<p>Aktiviere die HTML5-Benachrichtigungen und die Website erinnert dich automatisch an fällige Aufgaben. Tipp: Tab im Browser anheften, damit die Seite automatisch mit dem Start des Browsers geladen wird.</p>
+						</section>
+					</div>
+				</section>
+
+			</section>
+			
+		<!-- CTA -->
+			<section id="cta">
+				<h2><a href="register.html">Jetzt registrieren</a></h2>
+			</section>
+			
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<!--li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li-->
+					<li><a href="https://github.com/MDG-Apps" class="icon fa-github"><span class="label">Github</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Yannik Ehlert. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+		</div>
+	</body>
+</html>
